@@ -8,7 +8,7 @@ export const NewPost = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    tg.onEvent('backButtonClicked', console.log('asdfasdfasfd'))
+    tg.onEvent('backButtonClicked', navigate(-1))
     return (tg.offEvent('backButtonClicked', navigate(-1)))
   }, [])
 
