@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useTelegram } from '../hooks/useTelegram'
+import { Wrapper } from '../components/Wrapper'
 
 export const Profile = () => {
   const {user} = useTelegram()
@@ -9,12 +10,12 @@ export const Profile = () => {
   }, [user])
 
   return (
-    <div>
+    <Wrapper>
       <p className='text-xl font-semibold'>{user?.username || 'username'}</p>
       <p className='text-tgHintColor'>
         {user?.first_name || 'firstname'}
         {user?.last_name || 'lastname'}
       </p>
-    </div>
+    </Wrapper>
   )
 }
