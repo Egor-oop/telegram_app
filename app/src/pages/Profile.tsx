@@ -10,9 +10,11 @@ export const Profile = () => {
 
   return (
     <div>
-      <img src={user?.photo_url} alt={user?.username} className='w-20 rounded-full' />
-      <h2>{user?.first_name} {user?.last_name} {user?.photo_url}</h2>
-      <p>{user?.username}</p>
+      <p className='text-xl font-semibold'>{user?.username || 'username'}</p>
+      <p className='text-tgHintColor'>
+        {user?.first_name || 'firstname'}
+        {user?.last_name || 'lastname'}
+      </p>
     </div>
   )
 }
