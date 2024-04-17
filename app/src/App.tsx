@@ -10,6 +10,7 @@ function App() {
   useEffect(() => {
     tg.ready()
     tg.onEvent('backButtonClicked', navigate(-1))
+    return tg.offEvent('backButtonClicked', navigate(-1))
   }, [])
 
   return (
