@@ -12,7 +12,7 @@ function App() {
     <>
       <h1>{user?.username}</h1>
       <button onClick={onClose}>Toggle</button><br />
-      <Link to={'/telegram_app/profile'}>Profile</Link>
+      <Link to={'/profile'}>Profile</Link>
     </>
   )
 }
