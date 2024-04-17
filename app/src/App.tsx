@@ -1,12 +1,16 @@
 import { useEffect } from 'react'
 import './App.css'
 import { useTelegram } from './hooks/useTelegram'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function App() {
   const { tg } = useTelegram()
+  const navigate = useNavigate()
 
-  useEffect(() => { tg.ready() }, [])
+  useEffect(() => {
+    tg.ready()
+    tg.onEvent('backButtonClicked', navigate(-1))
+  }, [])
 
   return (
     <>
