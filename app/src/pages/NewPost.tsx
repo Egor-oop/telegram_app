@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 export const NewPost = () => {
   const { tg, onBackButton } = useTelegram()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   useEffect(() => {
     tg.onEvent('backButtonClicked', console.log('asdfasdfasfd'))
