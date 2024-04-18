@@ -21,6 +21,7 @@ export const Wrapper: FC<WrapperProps> = ({ children }) => {
 
   useEffect(() => {
     tg.onEvent('backButtonClicked', onBack)
+    tg.BackButton.hide()
     return () => (tg.offEvent('backButtonClicked', onBack))
   }, [onBack])
 
