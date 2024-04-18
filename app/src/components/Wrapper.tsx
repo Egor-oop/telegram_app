@@ -18,11 +18,13 @@ export const Wrapper: FC<WrapperProps> = ({ children }) => {
     console.log('going back')
     navigate(-1)
   }, [])
-
+  
   useEffect(() => {
     tg.onEvent('backButtonClicked', onBack)
-    tg.BackButton.hide()
-    return () => (tg.offEvent('backButtonClicked', onBack))
+    return () => {
+      tg.offEvent('backButtonClicked', onBack)
+      tg.BackButton.hide()
+    }
   }, [onBack])
 
   return (
